@@ -7,6 +7,7 @@ _Prerequsites_
 * Python 2.7.x
 * requests python library
 * Raspbery Pi with GPIO installed
+* DHT-11 temperature/humidity sensor
 
 
 Setup
@@ -15,7 +16,7 @@ Setup
 * register for an api account on the Nest website
 * enter client id and client secret in the config.ini file
 * click auth url, accept the permissions and copy the PIN into the config.ini file as the auth_code
-* wire your thermistor to the raspberry pi GPIO pins
+* wire your DHT-11 to the raspberry pi GPIO pins
 * enter the data channel number in the config.ini file
 
 
