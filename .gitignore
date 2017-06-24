@@ -2,3 +2,5 @@
 *.idea
 *.pyc
 .token
+config.ini
+token.json
