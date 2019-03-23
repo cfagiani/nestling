@@ -1,12 +1,15 @@
 Nestling
 ==========
 
-This is a simple Python application that can serve as a remote temperature sensor for a Nest thermostat. 
+A simple utility that automatically adjusts the target temperature on a Nest thermostat using readings
+from a DHT-11 sensor connected to a Raspberry Pi via its GPIO ports. This script uses a configuration file (config.ini)
+to drive its behavior. Prior to first use, you must obtain a key/token from the Nest Developers site since it uses
+ the Nest API directly and not a third-party integration like IFTTT.
 
 _Prerequsites_
-* Python 2.7.x
+* Python 3.x
 * requests python library
-* Raspbery Pi with GPIO installed
+* Raspbery Pi
 * DHT-11 temperature/humidity sensor
 
 
@@ -23,6 +26,5 @@ Setup
 NOTE: if you delete the cached token.json file you will need to re-generate a PIN 
 
 **TODO**
-* replace print calls with logging
-* cleanup sensor module
 * wiring diagram
+* tests

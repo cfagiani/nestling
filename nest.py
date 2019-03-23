@@ -1,6 +1,12 @@
-# Nest API client
 import requests
 import json
+
+"""
+Client library for invoking the Nest API. This client loads an authentication token from the .token file on disk. If 
+that file is not there, it will attempt to get a new token (and write it to the file) using the client ID, secret and 
+pin code that is supplied via the constructor. 
+"""
+__author__ = "Christopher Fagiani"
 
 API_URL = 'https://developer-api.nest.com'
 TOKEN_URL = 'https://api.home.nest.com/oauth2/access_token'
@@ -54,7 +60,7 @@ class Nest(object):
         payload = {"target_temperature_{scale}".format(scale=scale.lower): temp}
         text = self.execute_call("put", json.dumps(payload),
                                  "/devices/thermostats/{id}".format(id=self.get_thermostat_field("device_id")))
-        print text
+        print(text)
 
     def reload_data(self):
         """
@@ -77,7 +83,7 @@ class Nest(object):
         if devices:
             thermostats = devices.get("thermostats")
             if thermostats:
-                return thermostats.values()[0]
+                return list(thermostats.values())[0]
         raise Exception("Cannot find thermostat in Nest data. Do you have one?")
 
     def get_thermostat_field(self, field):
